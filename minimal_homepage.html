@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Katie ✨</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #be185d;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 300;
+            margin: 0 0 20px 0;
+            color: #ec4899;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #be185d;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        .main-link {
+            display: inline-block;
+            background: #fff;
+            color: #be185d;
+            text-decoration: none;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.15);
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #f9a8d4;
+        }
+
+        .main-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(236, 72, 153, 0.25);
+            background: #fdf2f8;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.9em;
+            color: #f472b6;
+        }
+
+        /* Subtle sparkle */
+        .sparkle {
+            position: absolute;
+            color: #f9a8d4;
+            font-size: 16px;
+            opacity: 0.6;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .sparkle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 30%; right: 20%; animation-delay: 1s; }
+        .sparkle:nth-child(3) { bottom: 25%; left: 20%; animation-delay: 2s; }
+    </style>
+</head>
+<body>
+    <!-- Subtle sparkles -->
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+
+    <div class="container">
+        <h1>Katie</h1>
+        <p class="subtitle">Creating cute things for the internet</p>
+        
+        <a href="wallpapers.html" class="main-link">
+            View My Wallpapers
+        </a>
+    </div>
+
+    <div class="footer">
+        Made with ✨
+    </div>
+</body>
+</html>
