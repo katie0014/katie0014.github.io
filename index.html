@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>katie made some cute wallpapers ✨</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffeef8, #e8f4fd, #f0e6ff);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating sparkles animation */
+        .sparkle {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 20px;
+            animation: float 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+
+        .sparkle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 20%; right: 15%; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { top: 60%; left: 5%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { top: 70%; right: 10%; animation-delay: 1.5s; }
+        .sparkle:nth-child(5) { top: 30%; left: 80%; animation-delay: 2s; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+            margin: 40px 0;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .wallpaper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .wallpaper-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .wallpaper-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(255, 105, 180, 0.4);
+        }
+
+        .wallpaper-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff69b4, #00bfff, #98fb98);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 15px 25px;
+            border-radius: 25px;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .wallpaper-link:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+        }
+
+        .description {
+            color: #8a2be2;
+            font-size: 1.1em;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .emoji-divider {
+            font-size: 2em;
+            margin: 30px 0;
+            opacity: 0.7;
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #ff69b4;
+            font-size: 1.2em;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Cute floating hearts */
+        .heart {
+            position: absolute;
+            color: #ff1493;
+            font-size: 16px;
+            animation: hearts 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes hearts {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .heart:nth-child(6) { left: 20%; animation-delay: 0s; }
+        .heart:nth-child(7) { left: 40%; animation-delay: 1s; }
+        .heart:nth-child(8) { left: 60%; animation-delay: 2s; }
+        .heart:nth-child(9) { left: 80%; animation-delay: 3s; }
+    </style>
+</head>
+<body>
+    <!-- Floating sparkles -->
+    <div class="sparkle">✨</div>
+    <div class="sparkle">⭐</div>
+    <div class="sparkle">💫</div>
+    <div class="sparkle">🌟</div>
+    <div class="sparkle">✨</div>
+
+    <!-- Floating hearts -->
+    <div class="heart">💖</div>
+    <div class="heart">💕</div>
+    <div class="heart">💝</div>
+    <div class="heart">💗</div>
+
+    <div class="container">
+        <h1>🌈 Katie Made Some Cute Wallpapers 🌈</h1>
+        
+        <div class="wallpaper-grid">
+            <div class="wallpaper-card">
+                <div class="emoji-divider">🌟 ✨ 🌟</div>
+                <a href="https://katie0014.github.io/blob_scifi_wallpaper_with_sparkles.html" class="wallpaper-link">
+                    🌟 Blob Sci-Fi Wallpaper 🌟
+                </a>
+                <div class="description">
+                    A dreamy sci-fi wallpaper with magical sparkles that dance across your screen! Perfect for space lovers and dreamers! 🚀✨
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Made with 💖 by Katie<br>
+            <small>✨ More cute wallpapers coming soon! ✨</small>
+        </div>
+    </div>
+</body>
+</html>
