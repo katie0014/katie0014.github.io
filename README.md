@@ -12,7 +12,7 @@ Cute wallpapers that will brighten up your desktop! Each one is made with lots o
 
 Feel free to browse around and find something you like! 
 
-### **[Click Here For My Homepage!](https://katie0014.github.io/wallpapers/wallpaper_main_page)**
+### **[Click Here For My Homepage!](https://katie0014.github.io)**
 
 ---
 
