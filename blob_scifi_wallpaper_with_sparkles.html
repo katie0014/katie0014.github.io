@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Blob Wallpaper</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: 'Courier New', monospace;
+        }
+
+        .wallpaper {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-bg {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: calc(100% + 200px);
+            height: calc(100% + 200px);
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .pink-blob {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.8);
+            animation: blobAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes blobAnimation {
+            0% { 
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            100% { 
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .blob-face {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: faceAnimation 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes faceAnimation {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        }
+
+        .hologram {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 50%;
+            left: 20%;
+            top: 20%;
+            animation: hologramAnimation 4s ease-in-out infinite;
+        }
+
+        .hologram-large {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 50%;
+            right: 15%;
+            top: 25%;
+            animation: hologramAnimation 6s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes hologramAnimation {
+            0% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.1);
+                opacity: 0.6;
+            }
+            100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 182, 193, 0.3);
+            border: 1px solid rgba(255, 182, 193, 0.5);
+            animation: bubbleFloat 8s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes bubbleFloat {
+            0% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-50vh) translateX(20px);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(-10px);
+                opacity: 0;
+            }
+        }
+
+        .bubble:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            left: 10%;
+            top: 100%;
+            animation-delay: 0s;
+            --drift-x: 20px;
+        }
+
+        .bubble:nth-child(2) {
+            width: 8px;
+            height: 8px;
+            left: 20%;
+            top: 105%;
+            animation-delay: 2s;
+            --drift-x: -15px;
+        }
+
+        .bubble:nth-child(3) {
+            width: 75px;
+            height: 75px;
+            left: 80%;
+            top: 110%;
+            animation-delay: 4s;
+            --drift-x: 30px;
+        }
+
+        .bubble:nth-child(4) {
+            width: 12px;
+            height: 12px;
+            left: 70%;
+            top: 103%;
+            animation-delay: 6s;
+            --drift-x: -10px;
+        }
+
+        .bubble:nth-child(5) {
+            width: 45px;
+            height: 45px;
+            left: 40%;
+            top: 108%;
+            animation-delay: 1s;
+            --drift-x: 25px;
+        }
+
+        .bubble:nth-child(6) {
+            width: 5px;
+            height: 5px;
+            left: 60%;
+            top: 102%;
+            animation-delay: 3s;
+            --drift-x: -5px;
+        }
+
+        .bubble:nth-child(7) {
+            width: 90px;
+            height: 90px;
+            left: 5%;
+            top: 115%;
+            animation-delay: 1.5s;
+            --drift-x: 40px;
+        }
+
+        .bubble:nth-child(8) {
+            width: 15px;
+            height: 15px;
+            left: 85%;
+            top: 107%;
+            animation-delay: 3.5s;
+            --drift-x: -20px;
+        }
+
+        .bubble:nth-child(9) {
+            width: 25px;
+            height: 25px;
+            left: 30%;
+            top: 104%;
+            animation-delay: 0.5s;
+            --drift-x: 15px;
+        }
+
+        .bubble:nth-child(10) {
+            width: 6px;
+            height: 6px;
+            left: 75%;
+            top: 101%;
+            animation-delay: 2.5s;
+            --drift-x: -8px;
+        }
+
+        .bubble:nth-child(11) {
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            top: 112%;
+            animation-delay: 5s;
+            --drift-x: 35px;
+        }
+
+        .bubble:nth-child(12) {
+            width: 18px;
+            height: 18px;
+            left: 15%;
+            top: 106%;
+            animation-delay: 4.5s;
+            --drift-x: -12px;
+        }
+
+        .bubble:nth-child(13) {
+            width: 35px;
+            height: 35px;
+            left: 90%;
+            top: 109%;
+            animation-delay: 0.2s;
+            --drift-x: 18px;
+        }
+
+        .bubble:nth-child(14) {
+            width: 10px;
+            height: 10px;
+            left: 25%;
+            top: 103%;
+            animation-delay: 1.8s;
+            --drift-x: -18px;
+        }
+
+        .bubble:nth-child(15) {
+            width: 65px;
+            height: 65px;
+            left: 45%;
+            top: 114%;
+            animation-delay: 3.2s;
+            --drift-x: 28px;
+        }
+
+        .bubble:nth-child(16) {
+            width: 7px;
+            height: 7px;
+            left: 65%;
+            top: 101%;
+            animation-delay: 5.5s;
+            --drift-x: -14px;
+        }
+
+        .bubble:nth-child(17) {
+            width: 40px;
+            height: 40px;
+            left: 35%;
+            top: 111%;
+            animation-delay: 2.2s;
+            --drift-x: 22px;
+        }
+
+        .bubble:nth-child(18) {
+            width: 95px;
+            height: 95px;
+            left: 78%;
+            top: 118%;
+            animation-delay: 4.8s;
+            --drift-x: 45px;
+        }
+
+        .bubble:nth-child(19) {
+            width: 14px;
+            height: 14px;
+            left: 55%;
+            top: 105%;
+            animation-delay: 1.2s;
+            --drift-x: -16px;
+        }
+
+        .bubble:nth-child(21) {
+            width: 4px;
+            height: 4px;
+            left: 88%;
+            top: 102%;
+            animation-delay: 0.8s;
+            --drift-x: -6px;
+        }
+
+        .bubble:nth-child(22) {
+            width: 55px;
+            height: 55px;
+            left: 22%;
+            top: 113%;
+            animation-delay: 2.8s;
+            --drift-x: 26px;
+        }
+
+        .bubble:nth-child(23) {
+            width: 16px;
+            height: 16px;
+            left: 68%;
+            top: 104%;
+            animation-delay: 4.2s;
+            --drift-x: -22px;
+        }
+
+        .bubble:nth-child(24) {
+            width: 85px;
+            height: 85px;
+            left: 42%;
+            top: 116%;
+            animation-delay: 5.8s;
+            --drift-x: 38px;
+        }
+
+        .bubble:nth-child(25) {
+            width: 9px;
+            height: 9px;
+            left: 58%;
+            top: 101%;
+            animation-delay: 1.4s;
+            --drift-x: -11px;
+        }
+
+        .bubble:nth-child(26) {
+            width: 32px;
+            height: 32px;
+            left: 18%;
+            top: 108%;
+            animation-delay: 3.4s;
+            --drift-x: 16px;
+        }
+
+        .bubble:nth-child(27) {
+            width: 70px;
+            height: 70px;
+            left: 72%;
+            top: 115%;
+            animation-delay: 0.6s;
+            --drift-x: 32px;
+        }
+
+        .bubble:nth-child(28) {
+            width: 11px;
+            height: 11px;
+            left: 38%;
+            top: 103%;
+            animation-delay: 2.6s;
+            --drift-x: -13px;
+        }
+
+        .bubble:nth-child(29) {
+            width: 48px;
+            height: 48px;
+            left: 62%;
+            top: 110%;
+            animation-delay: 4.6s;
+            --drift-x: 24px;
+        }
+
+        .bubble:nth-child(30) {
+            width: 3px;
+            height: 3px;
+            left: 82%;
+            top: 102%;
+            animation-delay: 5.2s;
+            --drift-x: -4px;
+        }
+
+        .bubble:nth-child(31) {
+            width: 22px;
+            height: 22px;
+            left: 33%;
+            top: 107%;
+            animation-delay: 0.3s;
+            --drift-x: 11px;
+        }
+
+        .bubble:nth-child(32) {
+            width: 8px;
+            height: 8px;
+            left: 77%;
+            top: 103%;
+            animation-delay: 1.7s;
+            --drift-x: -9px;
+        }
+
+        .bubble:nth-child(33) {
+            width: 67px;
+            height: 67px;
+            left: 13%;
+            top: 114%;
+            animation-delay: 3.3s;
+            --drift-x: 31px;
+        }
+
+        .bubble:nth-child(34) {
+            width: 19px;
+            height: 19px;
+            left: 59%;
+            top: 106%;
+            animation-delay: 4.9s;
+            --drift-x: -17px;
+        }
+
+        .bubble:nth-child(35) {
+            width: 41px;
+            height: 41px;
+            left: 26%;
+            top: 111%;
+            animation-delay: 2.1s;
+            --drift-x: 19px;
+        }
+
+        .bubble:nth-child(36) {
+            width: 6px;
+            height: 6px;
+            left: 84%;
+            top: 101%;
+            animation-delay: 5.7s;
+            --drift-x: -7px;
+        }
+
+        .bubble:nth-child(37) {
+            width: 73px;
+            height: 73px;
+            left: 47%;
+            top: 117%;
+            animation-delay: 1.1s;
+            --drift-x: 34px;
+        }
+
+        .bubble:nth-child(38) {
+            width: 13px;
+            height: 13px;
+            left: 91%;
+            top: 105%;
+            animation-delay: 3.9s;
+            --drift-x: -21px;
+        }
+
+        .bubble:nth-child(39) {
+            width: 29px;
+            height: 29px;
+            left: 7%;
+            top: 109%;
+            animation-delay: 0.7s;
+            --drift-x: 13px;
+        }
+
+        .bubble:nth-child(40) {
+            width: 52px;
+            height: 52px;
+            left: 51%;
+            top: 112%;
+            animation-delay: 2.9s;
+            --drift-x: 27px;
+        }
+
+        .bubble:nth-child(41) {
+            width: 17px;
+            height: 17px;
+            left: 36%;
+            top: 104%;
+            animation-delay: 4.7s;
+            --drift-x: -15px;
+        }
+
+        .bubble:nth-child(42) {
+            width: 83px;
+            height: 83px;
+            left: 19%;
+            top: 116%;
+            animation-delay: 1.9s;
+            --drift-x: 37px;
+        }
+
+        .bubble:nth-child(43) {
+            width: 11px;
+            height: 11px;
+            left: 73%;
+            top: 102%;
+            animation-delay: 5.1s;
+            --drift-x: -12px;
+        }
+
+        .bubble:nth-child(44) {
+            width: 38px;
+            height: 38px;
+            left: 64%;
+            top: 110%;
+            animation-delay: 3.7s;
+            --drift-x: 23px;
+        }
+
+        .bubble:nth-child(45) {
+            width: 24px;
+            height: 24px;
+            left: 8%;
+            top: 106%;
+            animation-delay: 0.9s;
+            --drift-x: -18px;
+        }
+
+        .bubble:nth-child(46) {
+            width: 61px;
+            height: 61px;
+            left: 87%;
+            top: 113%;
+            animation-delay: 2.7s;
+            --drift-x: 29px;
+        }
+
+        .bubble:nth-child(47) {
+            width: 9px;
+            height: 9px;
+            left: 41%;
+            top: 103%;
+            animation-delay: 4.3s;
+            --drift-x: -10px;
+        }
+
+        .bubble:nth-child(48) {
+            width: 46px;
+            height: 46px;
+            left: 29%;
+            top: 108%;
+            animation-delay: 1.5s;
+            --drift-x: 21px;
+        }
+
+        .bubble:nth-child(49) {
+            width: 21px;
+            height: 21px;
+            left: 76%;
+            top: 107%;
+            animation-delay: 3.1s;
+            --drift-x: -19px;
+        }
+
+        .bubble:nth-child(50) {
+            width: 77px;
+            height: 77px;
+            left: 53%;
+            top: 115%;
+            animation-delay: 5.3s;
+            --drift-x: 35px;
+        }
+
+        .bubble:nth-child(51) {
+            width: 15px;
+            height: 15px;
+            left: 11%;
+            top: 104%;
+            animation-delay: 0.4s;
+            --drift-x: -14px;
+        }
+
+        .bubble:nth-child(52) {
+            width: 33px;
+            height: 33px;
+            left: 67%;
+            top: 111%;
+            animation-delay: 2.4s;
+            --drift-x: 16px;
+        }
+
+        .bubble:nth-child(53) {
+            width: 7px;
+            height: 7px;
+            left: 89%;
+            top: 102%;
+            animation-delay: 4.1s;
+            --drift-x: -8px;
+        }
+
+        .bubble:nth-child(54) {
+            width: 58px;
+            height: 58px;
+            left: 23%;
+            top: 114%;
+            animation-delay: 1.3s;
+            --drift-x: 28px;
+        }
+
+        .bubble:nth-child(55) {
+            width: 26px;
+            height: 26px;
+            left: 71%;
+            top: 108%;
+            animation-delay: 3.5s;
+            --drift-x: -24px;
+        }
+
+        .bubble:nth-child(56) {
+            width: 49px;
+            height: 49px;
+            left: 44%;
+            top: 112%;
+            animation-delay: 5.9s;
+            --drift-x: 25px;
+        }
+
+        .bubble:nth-child(57) {
+            width: 12px;
+            height: 12px;
+            left: 16%;
+            top: 105%;
+            animation-delay: 2.3s;
+            --drift-x: -11px;
+        }
+
+        .bubble:nth-child(58) {
+            width: 71px;
+            height: 71px;
+            left: 81%;
+            top: 117%;
+            animation-delay: 4.5s;
+            --drift-x: 33px;
+        }
+
+        .bubble:nth-child(59) {
+            width: 20px;
+            height: 20px;
+            left: 37%;
+            top: 106%;
+            animation-delay: 0.1s;
+            --drift-x: -16px;
+        }
+
+        .bubble:nth-child(60) {
+            width: 54px;
+            height: 54px;
+            left: 63%;
+            top: 113%;
+            animation-delay: 1.8s;
+            --drift-x: 26px;
+        }
+
+        .bubble:nth-child(61) {
+            width: 16px;
+            height: 16px;
+            left: 92%;
+            top: 104%;
+            animation-delay: 3.6s;
+            --drift-x: -22px;
+        }
+
+        .bubble:nth-child(62) {
+            width: 43px;
+            height: 43px;
+            left: 27%;
+            top: 109%;
+            animation-delay: 5.4s;
+            --drift-x: 20px;
+        }
+
+        .bubble:nth-child(63) {
+            width: 8px;
+            height: 8px;
+            left: 69%;
+            top: 101%;
+            animation-delay: 2.6s;
+            --drift-x: -9px;
+        }
+
+        .bubble:nth-child(64) {
+            width: 66px;
+            height: 66px;
+            left: 14%;
+            top: 115%;
+            animation-delay: 4.8s;
+            --drift-x: 30px;
+        }
+
+        .bubble:nth-child(65) {
+            width: 23px;
+            height: 23px;
+            left: 56%;
+            top: 107%;
+            animation-delay: 1.6s;
+            --drift-x: -20px;
+        }
+
+        .bubble:nth-child(66) {
+            width: 79px;
+            height: 79px;
+            left: 39%;
+            top: 118%;
+            animation-delay: 0.5s;
+            --drift-x: 36px;
+        }
+
+        .bubble:nth-child(67) {
+            width: 18px;
+            height: 18px;
+            left: 85%;
+            top: 106%;
+            animation-delay: 2.2s;
+            --drift-x: -17px;
+        }
+
+        .bubble:nth-child(68) {
+            width: 37px;
+            height: 37px;
+            left: 21%;
+            top: 111%;
+            animation-delay: 4.4s;
+            --drift-x: 18px;
+        }
+
+        .bubble:nth-child(69) {
+            width: 10px;
+            height: 10px;
+            left: 74%;
+            top: 103%;
+            animation-delay: 1.4s;
+            --drift-x: -13px;
+        }
+
+        .bubble:nth-child(70) {
+            width: 63px;
+            height: 63px;
+            left: 48%;
+            top: 114%;
+            animation-delay: 3.8s;
+            --drift-x: 29px;
+        }
+
+        .bubble:nth-child(71) {
+            width: 14px;
+            height: 14px;
+            left: 6%;
+            top: 105%;
+            animation-delay: 5.6s;
+            --drift-x: -15px;
+        }
+
+        .bubble:nth-child(72) {
+            width: 50px;
+            height: 50px;
+            left: 79%;
+            top: 112%;
+            animation-delay: 2.8s;
+            --drift-x: 24px;
+        }
+
+        .bubble:nth-child(73) {
+            width: 25px;
+            height: 25px;
+            left: 32%;
+            top: 108%;
+            animation-delay: 0.2s;
+            --drift-x: -23px;
+        }
+
+        .bubble:nth-child(74) {
+            width: 72px;
+            height: 72px;
+            left: 66%;
+            top: 116%;
+            animation-delay: 1.7s;
+            --drift-x: 32px;
+        }
+
+        .bubble:nth-child(75) {
+            width: 13px;
+            height: 13px;
+            left: 24%;
+            top: 104%;
+            animation-delay: 4.2s;
+            --drift-x: -12px;
+        }
+
+        .bubble:nth-child(76) {
+            width: 44px;
+            height: 44px;
+            left: 86%;
+            top: 110%;
+            animation-delay: 3.4s;
+            --drift-x: 22px;
+        }
+
+        .bubble:nth-child(77) {
+            width: 9px;
+            height: 9px;
+            left: 52%;
+            top: 102%;
+            animation-delay: 5.8s;
+            --drift-x: -10px;
+        }
+
+        .bubble:nth-child(78) {
+            width: 57px;
+            height: 57px;
+            left: 17%;
+            top: 113%;
+            animation-delay: 2.5s;
+            --drift-x: 27px;
+        }
+
+        .bubble:nth-child(79) {
+            width: 31px;
+            height: 31px;
+            left: 75%;
+            top: 109%;
+            animation-delay: 0.8s;
+            --drift-x: -25px;
+        }
+
+        .bubble:nth-child(80) {
+            width: 68px;
+            height: 68px;
+            left: 43%;
+            top: 115%;
+            animation-delay: 4.6s;
+            --drift-x: 31px;
+        }
+
+        .bubble:nth-child(81) {
+            width: 15px;
+            height: 15px;
+            left: 9%;
+            top: 106%;
+            animation-delay: 1.2s;
+            --drift-x: -14px;
+        }
+
+        .bubble:nth-child(82) {
+            width: 39px;
+            height: 39px;
+            left: 61%;
+            top: 111%;
+            animation-delay: 3.7s;
+            --drift-x: 19px;
+        }
+
+        .bubble:nth-child(83) {
+            width: 11px;
+            height: 11px;
+            left: 83%;
+            top: 103%;
+            animation-delay: 5.2s;
+            --drift-x: -11px;
+        }
+
+        .bubble:nth-child(84) {
+            width: 74px;
+            height: 74px;
+            left: 28%;
+            top: 116%;
+            animation-delay: 2.9s;
+            --drift-x: 34px;
+        }
+
+        .bubble:nth-child(85) {
+            width: 22px;
+            height: 22px;
+            left: 70%;
+            top: 107%;
+            animation-delay: 0.6s;
+            --drift-x: -21px;
+        }
+
+        .bubble:nth-child(86) {
+            width: 56px;
+            height: 56px;
+            left: 45%;
+            top: 114%;
+            animation-delay: 4.9s;
+            --drift-x: 26px;
+        }
+
+        .bubble:nth-child(87) {
+            width: 17px;
+            height: 17px;
+            left: 12%;
+            top: 105%;
+            animation-delay: 1.5s;
+            --drift-x: -16px;
+        }
+
+        .bubble:nth-child(88) {
+            width: 47px;
+            height: 47px;
+            left: 78%;
+            top: 112%;
+            animation-delay: 3.2s;
+            --drift-x: 23px;
+        }
+
+        .bubble:nth-child(89) {
+            width: 7px;
+            height: 7px;
+            left: 35%;
+            top: 102%;
+            animation-delay: 5.5s;
+            --drift-x: -8px;
+        }
+
+        .bubble:nth-child(90) {
+            width: 65px;
+            height: 65px;
+            left: 58%;
+            top: 115%;
+            animation-delay: 2.1s;
+            --drift-x: 30px;
+        }
+
+        .bubble:nth-child(91) {
+            width: 19px;
+            height: 19px;
+            left: 88%;
+            top: 108%;
+            animation-delay: 4.3s;
+            --drift-x: -18px;
+        }
+
+        .bubble:nth-child(92) {
+            width: 42px;
+            height: 42px;
+            left: 25%;
+            top: 110%;
+            animation-delay: 0.9s;
+            --drift-x: 20px;
+        }
+
+        .bubble:nth-child(93) {
+            width: 12px;
+            height: 12px;
+            left: 72%;
+            top: 104%;
+            animation-delay: 3.6s;
+            --drift-x: -12px;
+        }
+
+        .bubble:nth-child(94) {
+            width: 59px;
+            height: 59px;
+            left: 15%;
+            top: 113%;
+            animation-delay: 1.8s;
+            --drift-x: 28px;
+        }
+
+        .bubble:nth-child(95) {
+            width: 27px;
+            height: 27px;
+            left: 65%;
+            top: 109%;
+            animation-delay: 5.1s;
+            --drift-x: -26px;
+        }
+
+        .bubble:nth-child(96) {
+            width: 81px;
+            height: 81px;
+            left: 41%;
+            top: 117%;
+            animation-delay: 2.7s;
+            --drift-x: 37px;
+        }
+
+        .bubble:nth-child(97) {
+            width: 16px;
+            height: 16px;
+            left: 80%;
+            top: 106%;
+            animation-delay: 4.7s;
+            --drift-x: -15px;
+        }
+
+        .bubble:nth-child(98) {
+            width: 34px;
+            height: 34px;
+            left: 30%;
+            top: 111%;
+            animation-delay: 1.1s;
+            --drift-x: 17px;
+        }
+
+        .bubble:nth-child(99) {
+            width: 6px;
+            height: 6px;
+            left: 77%;
+            top: 103%;
+            animation-delay: 3.9s;
+            --drift-x: -7px;
+        }
+
+        .bubble:nth-child(100) {
+            width: 76px;
+            height: 76px;
+            left: 54%;
+            top: 118%;
+            animation-delay: 5.7s;
+            --drift-x: 35px;
+        }
+
+        .binary-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: rgba(0, 255, 0, 0.25);
+            font-size: 12px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .binary-stream {
+            position: absolute;
+            animation: binaryFall 14s linear infinite;
+            opacity: 0;
+        }
+
+        .binary-stream:nth-child(1) {
+            left: 12%;
+            animation-delay: 0s;
+        }
+
+        .binary-stream:nth-child(2) {
+            left: 67%;
+            animation-delay: 1.4s;
+        }
+
+        .binary-stream:nth-child(3) {
+            left: 31%;
+            animation-delay: 2.8s;
+        }
+
+        .binary-stream:nth-child(4) {
+            left: 89%;
+            animation-delay: 4.2s;
+        }
+
+        .binary-stream:nth-child(5) {
+            left: 8%;
+            animation-delay: 5.6s;
+        }
+
+        .binary-stream:nth-child(6) {
+            left: 45%;
+            animation-delay: 7s;
+        }
+
+        .binary-stream:nth-child(7) {
+            left: 78%;
+            animation-delay: 8.4s;
+        }
+
+        @keyframes binaryFall {
+            0% { 
+                transform: translateY(-100vh); 
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(100vh); 
+                opacity: 0;
+            }
+        }
+
+        .circuit {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            animation: circuitFlow 3s linear infinite;
+        }
+
+        .circuit:nth-child(1) {
+            top: 15%;
+            right: 10%;
+            transform: rotate(45deg);
+        }
+
+        .circuit:nth-child(2) {
+            bottom: 25%;
+            left: 15%;
+            transform: rotate(-30deg);
+            animation-delay: 1s;
+        }
+
+        @keyframes circuitFlow {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #00ffff;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            animation: titleGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); }
+            100% { text-shadow: 0 0 20px rgba(0, 255, 255, 1); }
+        }
+
+        .credit {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            color: #00ff00;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            opacity: 0.8;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+            z-index: 20;
+        }
+
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            animation: scanMove 3s linear infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .sparkle-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            transform: rotate(45deg);
+            animation: sparkleAnimation 0.8s ease-out forwards;
+        }
+
+        .sparkle-star::before,
+        .sparkle-star::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+        }
+
+        .sparkle-star::before {
+            transform: rotate(90deg);
+        }
+
+        .sparkle-plus {
+            position: absolute;
+            width: 8px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            animation: sparkleAnimation 0.6s ease-out forwards;
+        }
+
+        .sparkle-plus::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 8px;
+            background: linear-gradient(0deg, transparent, #00ffff, transparent);
+            left: 3px;
+            top: -3px;
+        }
+
+        .sparkle-dot {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ff69b4;
+            border-radius: 50%;
+            animation: sparkleAnimation 0.7s ease-out forwards;
+        }
+
+        @keyframes sparkleAnimation {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5) rotate(360deg);
+            }
+        }
+        @keyframes scanMove {
+            0% { top: 0; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wallpaper" onclick="createSparkles(event)">
+        <div class="grid-bg"></div>
+        
+        <div class="binary-bg">
+            <div class="binary-stream">10110101<br>01001110<br>11010011<br>00101101<br>10110101<br>01001110<br>11010011<br>00101101<br>10110101<br>01001110</div>
+            <div class="binary-stream">01001110<br>11010011<br>00101101<br>10110101<br>01001110<br>11010011<br>00101101<br>10110101<br>01001110<br>11010011</div>
+            <div class="binary-stream">11010011<br>00101101<br>10110101<br>01001110<br>11010011<br>00101101<br>10110101<br>01001110<br>11010011<br>00101101</div>
+            <div class="binary-stream">00101101<br>10110101<br>01001110<br>11010011<br>00101101<br>10110101<br>01001110<br>11010011<br>00101101<br>10110101</div>
+            <div class="binary-stream">10110101<br>01001110<br>11010011<br>00101101<br>10110101<br>01001110<br>11010011<br>00101101<br>10110101<br>01001110</div>
+            <div class="binary-stream">11100110<br>10010001<br>01101010<br>11001100<br>00111011<br>10101010<br>01010101<br>11111000<br>00011010<br>10110011</div>
+            <div class="binary-stream">01010101<br>10101010<br>11110000<br>00001111<br>01010101<br>10101010<br>11110000<br>00001111<br>01010101<br>10101010</div>
+        </div>
+
+        <div class="hologram"></div>
+        <div class="hologram-large"></div>
+        
+        <div class="circuit"></div>
+        <div class="circuit"></div>
+
+        <div class="pink-blob">
+            <div class="blob-face">≧◡≦</div>
+        </div>
+
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+
+        <div class="title">CYBER BLOB v2.0</div>
+        <div class="credit">made by katie and her bestie claude</div>
+        <div class="scan-line"></div>
+    </div>
+
+    <script>
+        function createSparkles(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            
+            // Create 6-8 sparkles at click location
+            const sparkleCount = Math.floor(Math.random() * 3) + 6;
+            
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // Random sparkle type
+                const types = ['sparkle-star', 'sparkle-plus', 'sparkle-dot'];
+                const sparkleType = types[Math.floor(Math.random() * types.length)];
+                
+                const sparkleElement = document.createElement('div');
+                sparkleElement.className = sparkleType;
+                
+                // Random position around click point
+                const offsetX = (Math.random() - 0.5) * 60;
+                const offsetY = (Math.random() - 0.5) * 60;
+                
+                sparkle.style.left = (x + offsetX) + 'px';
+                sparkle.style.top = (y + offsetY) + 'px';
+                
+                sparkle.appendChild(sparkleElement);
+                document.body.appendChild(sparkle);
+                
+                // Remove sparkle after animation
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 800);
+            }
+        }
+    </script>
+</body>
+</html>
