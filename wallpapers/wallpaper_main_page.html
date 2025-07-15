@@ -116,6 +116,25 @@
             animation: pulse 2s ease-in-out infinite;
         }
 
+        .homepage-link {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color: #4a90e2;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            text-decoration: none;
+            opacity: 0.8;
+            text-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+            z-index: 20;
+            transition: opacity 0.3s ease;
+        }
+
+        .homepage-link:hover {
+            opacity: 1;
+            text-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
+        }
+
         @keyframes pulse {
             0%, 100% { opacity: 0.7; }
             50% { opacity: 1; }
@@ -177,6 +196,8 @@ A fun wallpaper combining adorable aesthetics with sci-fi vibes. 🫧✨🤖
             Made with 💖 by Katie<br>
             <small>✨ More cute wallpapers coming soon! ✨</small>
         </div>
+    
+    <a href="https://katie0014.github.io/" class="homepage-link">← back</a>
     </div>
 </body>
 </html>
