@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cow Time! 🐄</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #F0E68C 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Floating clouds */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0.8;
+            animation: float 20s infinite linear;
+        }
+        
+        .cloud:before, .cloud:after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+        }
+        
+        .cloud1 {
+            width: 80px;
+            height: 40px;
+            top: 20%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+        
+        .cloud1:before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 10px;
+        }
+        
+        .cloud1:after {
+            width: 60px;
+            height: 40px;
+            top: -15px;
+            right: 10px;
+        }
+        
+        .cloud2 {
+            width: 60px;
+            height: 30px;
+            top: 60%;
+            left: -80px;
+            animation-delay: -10s;
+        }
+        
+        .cloud2:before {
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            left: 8px;
+        }
+        
+        .cloud2:after {
+            width: 45px;
+            height: 30px;
+            top: -12px;
+            right: 8px;
+        }
+        
+        /* Floating background cows */
+        .floating-cow {
+            position: absolute;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .floating-cow1 {
+            font-size: 2.5rem;
+            top: 12%;
+            left: -60px;
+            animation: floatCow 25s infinite linear;
+            animation-delay: 0s;
+        }
+        
+        .floating-cow2 {
+            font-size: 1.8rem;
+            top: 45%;
+            left: -60px;
+            animation: floatCow 30s infinite linear;
+            animation-delay: -8s;
+        }
+        
+        .floating-cow3 {
+            font-size: 3rem;
+            top: 75%;
+            left: -60px;
+            animation: floatCow 35s infinite linear;
+            animation-delay: -15s;
+        }
+        
+        .floating-cow4 {
+            font-size: 1.5rem;
+            top: 30%;
+            left: -60px;
+            animation: floatCow 28s infinite linear;
+            animation-delay: -22s;
+        }
+        
+        .floating-cow5 {
+            font-size: 2.2rem;
+            top: 60%;
+            left: -60px;
+            animation: floatCow 32s infinite linear;
+            animation-delay: -5s;
+        }
+        
+        .floating-cow6 {
+            font-size: 1.3rem;
+            top: 8%;
+            left: -60px;
+            animation: floatCow 40s infinite linear;
+            animation-delay: -12s;
+        }
+        
+        .floating-cow7 {
+            font-size: 2.8rem;
+            top: 85%;
+            left: -60px;
+            animation: floatCow 27s infinite linear;
+            animation-delay: -18s;
+        }
+        
+        .floating-cow8 {
+            font-size: 1.6rem;
+            top: 38%;
+            left: -60px;
+            animation: floatCow 33s infinite linear;
+            animation-delay: -3s;
+        }
+        
+        .floating-cow9 {
+            font-size: 2rem;
+            top: 68%;
+            left: -60px;
+            animation: floatCow 29s infinite linear;
+            animation-delay: -25s;
+        }
+        
+        .floating-cow10 {
+            font-size: 1.4rem;
+            top: 22%;
+            left: -60px;
+            animation: floatCow 36s infinite linear;
+            animation-delay: -7s;
+        }
+        
+        .floating-cow11 {
+            font-size: 3.2rem;
+            top: 52%;
+            left: -60px;
+            animation: floatCow 31s infinite linear;
+            animation-delay: -20s;
+        }
+        
+        .floating-cow12 {
+            font-size: 1.7rem;
+            top: 15%;
+            left: -60px;
+            animation: floatCow 38s infinite linear;
+            animation-delay: -10s;
+        }
+        
+        .floating-cow13 {
+            font-size: 2.4rem;
+            top: 80%;
+            left: -60px;
+            animation: floatCow 26s infinite linear;
+            animation-delay: -16s;
+        }
+        
+        .floating-cow14 {
+            font-size: 1.2rem;
+            top: 42%;
+            left: -60px;
+            animation: floatCow 34s infinite linear;
+            animation-delay: -28s;
+        }
+        
+        .floating-cow15 {
+            font-size: 2.6rem;
+            top: 65%;
+            left: -60px;
+            animation: floatCow 37s infinite linear;
+            animation-delay: -2s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(calc(100vw + 100px)); }
+        }
+        
+        @keyframes floatCow {
+            0% { 
+                transform: translateX(-60px) translateY(0px) rotate(0deg); 
+                opacity: 0.6;
+            }
+            10% {
+                transform: translateX(calc(10vw)) translateY(-10px) rotate(5deg);
+                opacity: 0.7;
+            }
+            25% {
+                transform: translateX(calc(25vw)) translateY(15px) rotate(-3deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateX(calc(50vw)) translateY(-5px) rotate(2deg);
+                opacity: 0.7;
+            }
+            75% {
+                transform: translateX(calc(75vw)) translateY(10px) rotate(-4deg);
+                opacity: 0.6;
+            }
+            90% {
+                transform: translateX(calc(90vw)) translateY(-8px) rotate(1deg);
+                opacity: 0.5;
+            }
+            100% { 
+                transform: translateX(calc(100vw + 60px)) translateY(0px) rotate(0deg); 
+                opacity: 0.3;
+            }
+        }
+        
+        @keyframes bounceCow {
+            0% { 
+                transform: translateX(5vw) translateY(0px) rotate(0deg); 
+                opacity: 0.6;
+            }
+            15% {
+                transform: translateX(calc(85vw)) translateY(-20px) rotate(10deg);
+                opacity: 0.8;
+            }
+            30% {
+                transform: translateX(calc(85vw)) translateY(20px) rotate(-5deg);
+                opacity: 0.8;
+            }
+            45% {
+                transform: translateX(calc(15vw)) translateY(-15px) rotate(8deg);
+                opacity: 0.7;
+            }
+            60% {
+                transform: translateX(calc(15vw)) translateY(25px) rotate(-10deg);
+                opacity: 0.7;
+            }
+            75% {
+                transform: translateX(calc(75vw)) translateY(-10px) rotate(3deg);
+                opacity: 0.8;
+            }
+            90% {
+                transform: translateX(calc(75vw)) translateY(15px) rotate(-7deg);
+                opacity: 0.6;
+            }
+            100% { 
+                transform: translateX(5vw) translateY(0px) rotate(0deg); 
+                opacity: 0.6;
+            }
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            border: 3px solid #FFB6C1;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5rem;
+            color: #2C5530;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cow-face {
+            font-size: 4rem;
+            margin: 20px 0;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        .cow-face.happy {
+            animation: wiggle 1s ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        
+        .timer-display {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5rem;
+            color: #2C5530;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(45deg, #FFE4E1, #F0F8FF);
+            border-radius: 20px;
+            border: 3px solid #87CEEB;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timer-display.warning {
+            animation: pulse 1s infinite;
+            background: linear-gradient(45deg, #FFB6C1, #FFA07A);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .input-section {
+            margin: 30px 0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .time-input {
+            width: 70px;
+            padding: 12px;
+            font-size: 1.2rem;
+            border: 3px solid #87CEEB;
+            border-radius: 15px;
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            background: #F0F8FF;
+            cursor: pointer;
+        }
+        
+        .time-input:focus {
+            cursor: text;
+        }
+        
+        /* Keep arrows visible but allow typing */
+        .time-input::-webkit-outer-spin-button,
+        .time-input::-webkit-inner-spin-button {
+            opacity: 1;
+        }
+        
+        .time-input:focus {
+            outline: none;
+            border-color: #FFB6C1;
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+        }
+        
+        .time-label {
+            font-weight: 600;
+            color: #2C5530;
+            font-size: 1.1rem;
+        }
+        
+        .button {
+            background: linear-gradient(45deg, #98FB98, #87CEEB);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 20px;
+            color: #2C5530;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: #FFB6C1;
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        .button.stop {
+            background: linear-gradient(45deg, #FFB6C1, #FFA07A);
+        }
+        
+        .message {
+            font-size: 1.3rem;
+            color: #2C5530;
+            font-weight: 600;
+            margin-top: 20px;
+            min-height: 30px;
+        }
+        
+        .completed {
+            animation: celebration 2s infinite;
+            color: #FF69B4;
+        }
+        
+        @keyframes celebration {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    
+    <!-- Floating background cows - lots of different sizes! -->
+    <div class="floating-cow floating-cow1">🐄</div>
+    <div class="floating-cow floating-cow2">🐮</div>
+    <div class="floating-cow floating-cow3">🐄</div>
+    <div class="floating-cow floating-cow4">🐮</div>
+    <div class="floating-cow floating-cow5">🐄</div>
+    <div class="floating-cow floating-cow6">🐮</div>
+    <div class="floating-cow floating-cow7">🐄</div>
+    <div class="floating-cow floating-cow8">🐮</div>
+    <div class="floating-cow floating-cow9">🐄</div>
+    <div class="floating-cow floating-cow10">🐮</div>
+    <div class="floating-cow floating-cow11">🐄</div>
+    <div class="floating-cow floating-cow12">🐮</div>
+    <div class="floating-cow floating-cow13">🐄</div>
+    <div class="floating-cow floating-cow14">🐮</div>
+    <div class="floating-cow floating-cow15">🐄</div>
+    
+    <div class="bottom-grass"></div>
+    
+    <div class="container">
+        <h1 class="title">Cow Time! 🐄</h1>
+        
+        <div class="cow-face" id="cowFace">🐄</div>
+        
+        <div class="timer-display" id="timerDisplay">00:00:00</div>
+        
+        <div class="input-section">
+            <div>
+                <input type="number" class="time-input" id="hours" min="0" max="23" value="0" placeholder="0" onclick="this.select()">
+                <div class="time-label">hr</div>
+            </div>
+            <div>
+                <input type="number" class="time-input" id="minutes" min="0" max="59" value="5" placeholder="5" onclick="this.select()">
+                <div class="time-label">min</div>
+            </div>
+            <div>
+                <input type="number" class="time-input" id="seconds" min="0" max="59" value="0" placeholder="0" onclick="this.select()">
+                <div class="time-label">sec</div>
+            </div>
+        </div>
+        
+        <div>
+            <button class="button" id="startBtn" onclick="startTimer()">Start Timer 🐄</button>
+            <button class="button stop" id="stopBtn" onclick="stopTimer()">Stop Timer ⏸️</button>
+            <button class="button stop" id="resetBtn" onclick="resetTimer()">Reset Timer 🔄</button>
+        </div>
+        
+        <div class="message" id="message">Set your timer and click start! 🌟</div>
+    </div>
+    
+    <!-- Back button and credits -->
+    <div style="position: fixed; bottom: 20px; left: 20px; z-index: 100;">
+        <button class="button" onclick="goBack()" style="background: linear-gradient(45deg, #FFB6C1, #DDA0DD); padding: 8px 15px; font-size: 0.9rem;">← Back</button>
+    </div>
+    
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 100; color: #2C5530; font-family: 'Nunito', sans-serif; font-size: 0.8rem; opacity: 0.7;">
+        made by katie and her bestie claude 🐄💕
+    </div>
+
+    <script>
+        let timerInterval;
+        let totalSeconds = 0;
+        let initialSeconds = 0;
+        let isRunning = false;
+        
+        const timerDisplay = document.getElementById('timerDisplay');
+        const message = document.getElementById('message');
+        const cowFace = document.getElementById('cowFace');
+        const hoursInput = document.getElementById('hours');
+        const minutesInput = document.getElementById('minutes');
+        const secondsInput = document.getElementById('seconds');
+        
+        function updateDisplay() {
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            timerDisplay.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Add warning style when under 10 seconds
+            if (totalSeconds <= 10 && totalSeconds > 0) {
+                timerDisplay.classList.add('warning');
+            } else {
+                timerDisplay.classList.remove('warning');
+            }
+        }
+        
+        function startTimer() {
+            if (isRunning) return;
+            
+            // If timer is not set (totalSeconds is 0), get new values from inputs
+            if (totalSeconds === 0) {
+                const hours = parseInt(hoursInput.value) || 0;
+                const minutes = parseInt(minutesInput.value) || 0;
+                const seconds = parseInt(secondsInput.value) || 0;
+                
+                if (hours === 0 && minutes === 0 && seconds === 0) {
+                    message.textContent = "Please set a time first! 🐄";
+                    return;
+                }
+                
+                totalSeconds = hours * 3600 + minutes * 60 + seconds;
+                initialSeconds = totalSeconds; // Remember the starting time
+                message.textContent = "Timer is running... Moo! 🐄";
+            } else {
+                // Resume from where we left off
+                message.textContent = "Timer resumed! Moo! 🐄";
+            }
+            
+            isRunning = true;
+            cowFace.textContent = "🐄";
+            cowFace.classList.remove('happy');
+            
+            timerInterval = setInterval(() => {
+                totalSeconds--;
+                updateDisplay();
+                
+                if (totalSeconds <= 0) {
+                    timerComplete();
+                }
+            }, 1000);
+            
+            updateDisplay();
+        }
+        
+        function stopTimer() {
+            if (!isRunning) return;
+            
+            clearInterval(timerInterval);
+            isRunning = false;
+            
+            timerDisplay.classList.remove('warning');
+            message.textContent = "Timer paused! Click start to continue 🐄";
+            cowFace.textContent = "😴";
+        }
+        
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            totalSeconds = 0;
+            initialSeconds = 0;
+            
+            timerDisplay.classList.remove('warning');
+            timerDisplay.textContent = "00:00:00";
+            message.textContent = "Timer reset! Ready to start again 🐄";
+            cowFace.textContent = "🐄";
+            cowFace.classList.remove('happy');
+            
+        }
+        
+        function timerComplete() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            
+            timerDisplay.classList.remove('warning');
+            timerDisplay.textContent = "00:00:00";
+            message.innerHTML = '<span class="completed">Time\'s up! Moooo! 🎉🐄</span>';
+            
+            // Happy cow animation
+            cowFace.textContent = "😊🐄";
+            cowFace.classList.add('happy');
+            
+            // Play celebration
+            setTimeout(() => {
+                cowFace.textContent = "🐄";
+                cowFace.classList.remove('happy');
+                message.textContent = "Ready for another timer? 🌟";
+            }, 3000);
+        }
+        
+        // Initialize display
+        updateDisplay();
+        
+        // Allow Enter key to start timer
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                // Check if any of the time inputs are focused
+                const activeElement = document.activeElement;
+                if (activeElement === hoursInput || activeElement === minutesInput || activeElement === secondsInput) {
+                    startTimer();
+                } else if (!isRunning) {
+                    startTimer();
+                }
+            }
+        });
+        
+        // Add event listeners to time inputs for Enter key
+        [hoursInput, minutesInput, secondsInput].forEach(input => {
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    startTimer();
+                }
+            });
+        });
+        
+        // Back button function
+        function goBack() {
+            window.location.href = 'https://katie0014.github.io/';
+        }
+    </script>
+</body>
+</html>
